@@ -30,9 +30,10 @@ const rentalSchema = mongoose.Schema({
   createdAt: {
     type: Date,
     default: Date.now
-  }
+  },
+  user: { type: mongoose.Schema.Types.ObjectId, ref: "User" }
 });
 
 const Rental = mongoose.model("Rental", rentalSchema);
 
-module.exports = { Rental };
+module.exports = Rental;
