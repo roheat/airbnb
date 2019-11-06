@@ -81,5 +81,4 @@ exports.register = function(req, res) {
       return res.json({ registered: true });
     });
   });
-  // return res.json({ username, email });
 };

@@ -31,7 +31,8 @@ const rentalSchema = mongoose.Schema({
     type: Date,
     default: Date.now
   },
-  user: { type: mongoose.Schema.Types.ObjectId, ref: "User" }
+  user: { type: mongoose.Schema.Types.ObjectId, ref: "User" },
+  bookings: [{ type: mongoose.Schema.Types.ObjectId, ref: "Booking" }]
 });
 
 const Rental = mongoose.model("Rental", rentalSchema);

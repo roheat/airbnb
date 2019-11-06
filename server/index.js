@@ -19,9 +19,11 @@ const Rental = require("./models/rental");
 // Routes
 const rentalRoutes = require("./routes/rentals");
 const userRoutes = require("./routes/users");
+const bookingRoutes = require("./routes/bookings");
 
 app.use("/api/v1/rentals", rentalRoutes);
 app.use("/api/v1/users", userRoutes);
+app.use("/api/v1/bookings", bookingRoutes);
 
 const PORT = process.env.port || 5000;
 

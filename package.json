@@ -19,6 +19,7 @@
     "express": "^4.16.3",
     "express-formidable": "^1.0.0",
     "jsonwebtoken": "^8.3.0",
+    "moment": "^2.24.0",
     "mongoose": "^5.1.6"
   }
 }
