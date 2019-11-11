@@ -1,5 +1,5 @@
 import {
-  FETCH_RENTALS,
+  FETCH_RENTALS_SUCCESS,
   FETCH_RENTAL_BY_ID_START,
   FETCH_RENTAL_BY_ID_SUCCESS
 } from "../actions/types";
@@ -11,7 +11,7 @@ const INITIAL_STATE = {
 
 export const rentalReducer = (state = INITIAL_STATE, action) => {
   switch (action.type) {
-    case FETCH_RENTALS:
+    case FETCH_RENTALS_SUCCESS:
       return { ...state, data: action.payload };
     case FETCH_RENTAL_BY_ID_START:
       return { ...state, rental: {} };
