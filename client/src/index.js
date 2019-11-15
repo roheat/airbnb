@@ -16,7 +16,7 @@ const store = createStore(reducer, composeEnhancers(applyMiddleware(thunk)));
 ReactDOM.render(
   <Provider store={store}>
     <BrowserRouter>
-      <App />
+      <App store={store} />
     </BrowserRouter>
   </Provider>,
   document.querySelector("#root")

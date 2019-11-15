@@ -1,15 +1,17 @@
 import axios from "axios";
-
+import axiosService from "services/axios-service";
 import {
   FETCH_RENTALS_SUCCESS,
   FETCH_RENTAL_BY_ID_START,
   FETCH_RENTAL_BY_ID_SUCCESS
 } from "./types";
 
+const axiosInstance = axiosService.getInstance();
+
 export const fetchRentals = () => {
   return dispatch => {
-    axios
-      .get(`/api/v1/rentals/`)
+    axiosInstance
+      .get(`/rentals`)
       .then(res => res.data)
       .then(rentals => dispatch(fetchRentalsSuccess(rentals)));
   };

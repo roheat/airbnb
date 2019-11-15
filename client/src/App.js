@@ -6,23 +6,40 @@ import RentalList from "components/rental/RentalList";
 import RentalDetail from "components/rental/RentalDetail";
 import Login from "components/login/Login";
 import Register from "components/register/Register";
+import { checkAuthState } from "redux/actions/auth-actions";
+import ProtectedRoute from "common/ProtectedRoute";
+import LoggedInRoute from "common/LoggedInRoute";
 
 import "App.css";
 
-const App = () => {
-  return (
-    <div>
-      <Header />
-      <div className="container">
-        <Switch>
-          <Route path="/" exact component={RentalList} />
-          <Route path="/rentals/:id" exact component={RentalDetail} />
-          <Route path="/login" exact component={Login} />
-          <Route path="/register" exact component={Register} />
-        </Switch>
+class App extends React.Component {
+  componentDidMount() {
+    this.checkAuthState();
+  }
+
+  checkAuthState() {
+    this.props.store.dispatch(checkAuthState());
+  }
+
+  render() {
+    return (
+      <div>
+        <Header />
+        <div className="container">
+          <Switch>
+            <Route path="/" exact component={RentalList} />
+            <ProtectedRoute
+              path="/rentals/:id"
+              exact
+              component={RentalDetail}
+            />
+            <Route path="/login" exact component={Login} />
+            <LoggedInRoute path="/register" exact component={Register} />
+          </Switch>
+        </div>
       </div>
-    </div>
-  );
-};
+    );
+  }
+}
 
 export default App;
