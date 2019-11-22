@@ -11,6 +11,10 @@ const rentalSchema = mongoose.Schema({
     required: true,
     lowercase: true
   },
+  category: {
+    type: String,
+    required: true
+  },
   street: {
     type: String,
     required: true,

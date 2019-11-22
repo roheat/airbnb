@@ -10,7 +10,7 @@ app.use(bodyParser.json());
 mongoose.Promise = global.Promise;
 mongoose.connect(process.env.DATABASE).then(() => {
   const fakeDb = new FakeDb();
-  // fakeDb.seedDb();
+  fakeDb.seedDb();
 });
 
 // Models

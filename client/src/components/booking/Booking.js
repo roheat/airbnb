@@ -80,7 +80,6 @@ class Booking extends React.Component {
   reserve = () => {
     createBooking(this.state.booking).then(
       booking => {
-        console.log(booking);
         this.addNewBookedOutDates(booking);
         this.close();
         this.reset();

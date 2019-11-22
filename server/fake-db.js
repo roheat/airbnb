@@ -1,5 +1,6 @@
 const Rental = require("./models/rental");
 const User = require("./models/user");
+const Booking = require("./models/booking");
 
 class FakeDb {
   constructor() {
@@ -80,6 +81,7 @@ class FakeDb {
   async cleanDb() {
     await User.remove({});
     await Rental.remove({});
+    await Booking.remove({});
   }
 }
 
